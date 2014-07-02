@@ -1,0 +1,6 @@
+﻿Credits
+======================================
+This driver sourcecode has been developed by:
+- Frans Bouma of Solutions Design bv. (main code)
+- Jeremy Thomas.  (additional code, information providing)
+

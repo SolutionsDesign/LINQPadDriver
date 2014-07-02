@@ -1,8 +1,5 @@
-LINQPadDriver
-=============
-The Official LLBLGen Pro LINQPad driver. This repository is the continuation of the Codeplex repository at
-https://llblgenlinqpad.codeplex.com/. For the sourcecode of the Linqpad driver for LLBLGen Pro v4.1 or earlier
-please visit the codeplex repository. 
+﻿README
+==========================================
 
 How to compile the sourcecode
 -----------------------------------
@@ -11,13 +8,16 @@ the folder \Externals before compiling. It can be DevDeploy(4).bat fails after c
 in those bat files or remove the post-build event. If you copied LINQPad.exe v4.40 or higher in the Externals
 folder, you have to change the target framework to .NET 4 for the driver project to compile the code. 
 
+
 Requirements to compile the code:
 -----------------------------------
 .NET 3.5 SDK or higher. Recommented: VS.NET 2010, 2012 or 2013 (preferred). 
 
+
 How to distribute the driver
 ------------------------------------
 To distribute the driver, zip the dll and header.xml into a zip file and rename the extension to .lpx. 
+
 
 Executing SQL
 ------------------
@@ -25,6 +25,7 @@ The driver isn't designed to be used to execute SQL against a database, though i
 is true:
 - You specify a connection string in the connection dialog
 - In the connection string specified you connect to a SQL Server service.
+
 
 Executing QuerySpec or Low-level API queries
 ----------------------------------------------

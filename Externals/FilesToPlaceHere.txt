@@ -1,0 +1,5 @@
+Place the following files here:
+
+- LINQPad.exe (build v2.40 or higher). v2.x is the .NET 3.5 build, as the driver is a .NET 3.5 project.
+- nunit.framework.dll (v2.5+) for tests
+- SD.LLBLGen.Pro.ORMSupportClasses.dll (v4.2)
