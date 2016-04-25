@@ -11,7 +11,7 @@ folder, you have to change the target framework to .NET 4 for the driver project
 
 Requirements to compile the code:
 -----------------------------------
-.NET 3.5 SDK or higher. Recommented: VS.NET 2010, 2012 or 2013 (preferred). 
+.NET 3.5 SDK or higher. Recommented: VS.NET 2010 or higher.
 
 
 How to distribute the driver

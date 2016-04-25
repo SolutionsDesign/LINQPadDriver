@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("LLBLGen Pro LINQPad Driver")]
-[assembly: AssemblyDescription("LINQPad driver for LLBLGen Pro v5.0b2")]
+[assembly: AssemblyDescription("LINQPad driver for LLBLGen Pro v5.0")]
 [assembly: AssemblyConfiguration(".NET 3.5")]
 [assembly: AssemblyCompany("Solutions Design bv")]
 [assembly: AssemblyProduct("LLBLGen Pro")]
-[assembly: AssemblyCopyright("Copyright ©2014 Solutions Design bv")]
+[assembly: AssemblyCopyright("Copyright ©2016 Solutions Design bv")]
 [assembly: AssemblyTrademark("LLBLGen and LLBLGen Pro are trademarks of Solutions Design bv.")]
 [assembly: AssemblyCulture("")]
 

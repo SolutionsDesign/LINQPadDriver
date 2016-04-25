@@ -1,3 +1,4 @@
+@Echo off
 rem
 rem  You can simplify development by updating this batch file and then calling it from the 
 rem  project's post-build event.
@@ -14,6 +15,6 @@ rem       @"LINQPad\Drivers\DataContext\3.5\")
 rem
 rem  The final part of the directory is the name of the assembly plus its public key token in brackets.
 echo 4.0 b094696bc21c000a
-xcopy /i/y *.dll "C:\ProgramData\LINQPad\Drivers\DataContext\4.0\SD.LLBLGen.Pro.LINQPadDriver42 (b094696bc21c000a)"
-xcopy /i/y *.pdb "C:\ProgramData\LINQPad\Drivers\DataContext\4.0\SD.LLBLGen.Pro.LINQPadDriver42 (b094696bc21c000a)"
+xcopy /i/y *.dll "C:\ProgramData\LINQPad\Drivers\DataContext\4.0\SD.LLBLGen.Pro.LINQPadDriver50 (b094696bc21c000a)"
+xcopy /i/y *.pdb "C:\ProgramData\LINQPad\Drivers\DataContext\4.0\SD.LLBLGen.Pro.LINQPadDriver50 (b094696bc21c000a)"
 pause
