@@ -77,6 +77,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="DevDeploy.bat" />
+    <None Include="DevDeploy5.bat" />
     <None Include="DevDeploy4.bat" />
     <None Include="packages.config" />
     <None Include="StrongName.snk" />
@@ -97,7 +98,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>Call "$(ProjectDir)\DevDeploy4.bat"
+    <PostBuildEvent>Call "$(ProjectDir)\DevDeploy5.bat"
+Call "$(ProjectDir)\DevDeploy4.bat"
 Call "$(ProjectDir)\DevDeploy.bat"
 </PostBuildEvent>
   </PropertyGroup>
