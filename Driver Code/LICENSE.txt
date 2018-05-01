@@ -3,7 +3,7 @@
 The sourcecode and binary compiled version of this driver are licensed under the BSD2 license:
 
 COPYRIGHTS:
-Copyright (c)2002-2017 Solutions Design. All rights reserved.
+Copyright (c)2002-2018 Solutions Design. All rights reserved.
 http://www.llblgen.com
 
 The LLBLGen Pro LINQPad driver sourcecode is released under the following license (BSD2):

@@ -11,7 +11,7 @@ folder, you have to change the target framework to .NET 4 for the driver project
 
 Requirements to compile the code:
 -----------------------------------
-.NET 3.5 SDK or higher. Recommented: VS.NET 2010 or higher.
+.NET 4.5.2 SDK or higher. Recommented: VS.NET 2015 or higher or Rider 2017.x or higher
 
 
 How to distribute the driver
