@@ -9,7 +9,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SD.LLBLGen.Pro.LINQPadDriver</RootNamespace>
-    <AssemblyName>SD.LLBLGen.Pro.LINQPadDriver53</AssemblyName>
+    <AssemblyName>SD.LLBLGen.Pro.LINQPadDriver54</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
