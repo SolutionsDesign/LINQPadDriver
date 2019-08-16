@@ -144,15 +144,13 @@ namespace SD.LLBLGen.Pro.LINQPadDriver
 			{
 				throw new InvalidOperationException("No ILinqMetaData type found.");
 			}
-			var ormSupportClassesAssemblyName = _linqMetaDataType.Assembly.GetReferencedAssemblies()
-													.Where(an=>(an.Name=="SD.LLBLGen.Pro.ORMSupportClasses") && 
-																(an.Version.Major==Constants.MajorVersion) &&
-																(an.Version.Minor==Constants.MinorVersion)).FirstOrDefault();
-			if(ormSupportClassesAssemblyName == null)
-			{
-				throw new InvalidOperationException(string.Format("The assembly '{0}' is not compiled against the LLBLGen Pro Runtime Framework v{1}.{2}.",
-					CxInfoHelper.GetEntityAssemblyFilename(_cxInfo, CxInfoHelper.GetTemplateGroup(_cxInfo)), Constants.MajorVersion, Constants.MinorVersion));
-			}
+
+
+			var ormSupportClassesAssemblyName = _linqMetaDataType.Assembly.GetReferencedAssemblies().FirstOrDefault(an => an.Name=="SD.LLBLGen.Pro.ORMSupportClasses");
+            if(ormSupportClassesAssemblyName == null) throw new InvalidOperationException($"The assembly '{CxInfoHelper.GetEntityAssemblyFilename(_cxInfo, CxInfoHelper.GetTemplateGroup(_cxInfo))}' is not found.");
+            if (ormSupportClassesAssemblyName.Version.Major != Constants.MajorVersion || ormSupportClassesAssemblyName.Version.Minor != Constants.MinorVersion) {
+                throw new InvalidOperationException($"The assembly '{CxInfoHelper.GetEntityAssemblyFilename(_cxInfo, CxInfoHelper.GetTemplateGroup(_cxInfo))}' is compiled against version {ormSupportClassesAssemblyName.Version.Major}.{ormSupportClassesAssemblyName.Version.Minor} and not the required LLBLGen Pro Runtime Framework v{Constants.MajorVersion}.{Constants.MinorVersion}.");
+            }
 		}
 		
 
