@@ -9,8 +9,8 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SD.LLBLGen.Pro.LINQPadDriver</RootNamespace>
-    <AssemblyName>SD.LLBLGen.Pro.LINQPadDriver55</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <AssemblyName>SD.LLBLGen.Pro.LINQPadDriver56</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -40,13 +40,11 @@
     <AssemblyOriginatorKeyFile>StrongName.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="LINQPad, Version=1.0.0.0, Culture=neutral, PublicKeyToken=21353812cd2a2db5, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <ExecutableExtension>.exe</ExecutableExtension>
-      <HintPath>..\Externals\LINQPad.exe</HintPath>
+    <Reference Include="LINQPad, Version=1.0.0.0, Culture=neutral, PublicKeyToken=21353812cd2a2db5">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\LINQPad5\LINQPad.exe</HintPath>
     </Reference>
-    <Reference Include="SD.LLBLGen.Pro.ORMSupportClasses, Version=5.5.0.0, Culture=neutral, PublicKeyToken=ca73b74ba4e3ff27">
-      <HintPath>..\packages\SD.LLBLGen.Pro.ORMSupportClasses.5.5.0\lib\net452\SD.LLBLGen.Pro.ORMSupportClasses.dll</HintPath>
+    <Reference Include="SD.LLBLGen.Pro.ORMSupportClasses, Version=5.6.0.0, Culture=neutral, PublicKeyToken=ca73b74ba4e3ff27">
+      <HintPath>..\packages\SD.LLBLGen.Pro.ORMSupportClasses.5.6.0\lib\net452\SD.LLBLGen.Pro.ORMSupportClasses.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />

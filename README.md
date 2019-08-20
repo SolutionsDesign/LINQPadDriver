@@ -1,6 +1,6 @@
 LLBLGen Pro LINQPad Driver
 ===========================
-The Official [LLBLGen Pro](http://www.llblgen.com) LINQPad driver. This repository is the continuation of the Codeplex repository at
+The Official [LLBLGen Pro](https://www.llblgen.com) LINQPad driver. This repository is the continuation of the Codeplex repository at
 https://llblgenlinqpad.codeplex.com/. For the sourcecode of the Linqpad driver for LLBLGen Pro v4.1 or earlier
 please visit the codeplex repository. 
 
