@@ -91,50 +91,7 @@ namespace SD.LLBLGen.Pro.LINQPadDriver
 				FillControlsWithExistingData();
 			}
 			this.MinimumSize = this.Size;
-			EnableDisableORMProfilerCheckBox();
-		}
-
-
-		/// <summary>
-		/// Enables the disable ORM profiler check box.
-		/// </summary>
-		private void EnableDisableORMProfilerCheckBox()
-		{
-			// check whether the .opsnapshot extension is registered in the registry. If so, grab the folder location for the interceptor.
-			// if not, disable the checkbox. 
-			bool enableEnableORMProfilerCheckbox = true;
-			var opsnapshotRegistration = Registry.GetValue("HKEY_CLASSES_ROOT\\.opsnapshot", string.Empty, null);
-			if(opsnapshotRegistration == null)
-			{
-				enableEnableORMProfilerCheckbox = false;
-			}
-			else
-			{
-				string realRegistryKey = opsnapshotRegistration as string;
-				if(realRegistryKey == null)
-				{
-					enableEnableORMProfilerCheckbox = false;
-				}
-				else
-				{
-					var iconPath = Registry.GetValue(string.Format("HKEY_CLASSES_ROOT\\{0}\\DefaultIcon", realRegistryKey), string.Empty, null) as string;
-					if(iconPath == null)
-					{
-						enableEnableORMProfilerCheckbox = false;
-					}
-					else
-					{
-						iconPath = iconPath.Substring(0, iconPath.Length - 2);
-						var interceptorPath = Path.Combine(Path.GetDirectoryName(iconPath), "SD.Tools.OrmProfiler.Interceptor.dll");
-						enableEnableORMProfilerCheckbox = File.Exists(interceptorPath);
-						if(enableEnableORMProfilerCheckbox)
-						{
-							CxInfoHelper.SetDriverDataElement(_cxInfo, DriverDataElements.ORMProfilerInterceptorLocationElement, interceptorPath);
-						}
-					}
-				}
-			}
-			_enableORMProfilerCheckBox.Enabled = enableEnableORMProfilerCheckbox;
+            EnableDisableORMProfilerInterceptorControls();
 		}
 
 
@@ -163,8 +120,9 @@ namespace SD.LLBLGen.Pro.LINQPadDriver
 			_aSpecAssemblyTextBox.Text = CxInfoHelper.GetDriverDataElementValue(_cxInfo, DriverDataElements.AdapterDBSpecificAssemblyFilenameElement);
 			_connectionStringTextBox.Text = CxInfoHelper.GetDriverDataElementValue(_cxInfo, DriverDataElements.ConnectionStringElementName);
 			_appConfigFileTextBox.Text = CxInfoHelper.GetDriverDataElementValue(_cxInfo, DriverDataElements.ConfigFileFilenameElement);
-			_enableORMProfilerCheckBox.Checked = XmlConvert.ToBoolean(CxInfoHelper.GetDriverDataElementValue(_cxInfo, 
-																											 DriverDataElements.EnableORMProfilerElement));
+            _enableORMProfilerCheckBox.Checked = XmlConvert.ToBoolean(CxInfoHelper.GetDriverDataElementValue(_cxInfo, DriverDataElements.EnableORMProfilerElement));
+            _ormprofilerInterceptorDllTextBox.Text = CxInfoHelper.GetDriverDataElementValue(_cxInfo, DriverDataElements.ORMProfilerInterceptorLocationElement);
+			_enableORMProfilerCheckBox.Checked = XmlConvert.ToBoolean(CxInfoHelper.GetDriverDataElementValue(_cxInfo, DriverDataElements.EnableORMProfilerElement));
 		}
 
 		
@@ -265,6 +223,14 @@ namespace SD.LLBLGen.Pro.LINQPadDriver
 		}
 
 
+        private void EnableDisableORMProfilerInterceptorControls()
+        {
+            _ormprofilerInterceptorDllTextBox.Enabled = _enableORMProfilerCheckBox.Checked;
+            _ormProfilerInterceptorLabel.Enabled = _enableORMProfilerCheckBox.Checked;
+            _browseOrmProfilerInterceptorDllButton.Enabled = _enableORMProfilerCheckBox.Checked;
+        }
+
+
 		/// <summary>
 		/// Fills the cx info with the data specified on the form
 		/// </summary>
@@ -283,8 +249,8 @@ namespace SD.LLBLGen.Pro.LINQPadDriver
 			CxInfoHelper.SetDriverDataElement(_cxInfo, DriverDataElements.ConfigFileFilenameElement, _appConfigFileTextBox.Text);
 			CxInfoHelper.SetDriverDataElement(_cxInfo, DriverDataElements.ConnectionStringElementName, _connectionStringTextBox.Text);
 			_cxInfo.DatabaseInfo.CustomCxString = _connectionStringTextBox.Text;
-			CxInfoHelper.SetDriverDataElement(_cxInfo, DriverDataElements.EnableORMProfilerElement, 
-										XmlConvert.ToString((_enableORMProfilerCheckBox.Enabled && _enableORMProfilerCheckBox.Checked)));
+			CxInfoHelper.SetDriverDataElement(_cxInfo, DriverDataElements.EnableORMProfilerElement, XmlConvert.ToString((_enableORMProfilerCheckBox.Enabled && _enableORMProfilerCheckBox.Checked)));
+            CxInfoHelper.SetDriverDataElement(_cxInfo, DriverDataElements.ORMProfilerInterceptorLocationElement,  _ormprofilerInterceptorDllTextBox.Text);
 			CxInfoHelper.SetCustomTypeInfo(_cxInfo, templateGroupSelected);
 		}
 
@@ -450,5 +416,15 @@ namespace SD.LLBLGen.Pro.LINQPadDriver
 		{
 			BrowseForFile("Please select the .config file to use.", ".config files (*.config)|*.config", ".config", _appConfigFileTextBox);
 		}
-	}
+
+        private void _browseOrmProfilerInterceptorDllButton_Click(object sender, EventArgs e)
+        {
+            BrowseForFile("Please select the ORM Profiler Intercept dll to use", "Assemblies (*.dll)|*.dll", ".dll", _ormprofilerInterceptorDllTextBox);
+        }
+
+        private void _enableORMProfilerCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            EnableDisableORMProfilerInterceptorControls();
+        }
+    }
 }
