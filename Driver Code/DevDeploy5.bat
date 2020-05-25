@@ -8,6 +8,6 @@ rem  picks up the drivers immediately (without needing to click 'Add Driver').
 rem
 rem  The final part of the directory is the name of the assembly plus its public key token in brackets.
 echo 5.0 b094696bc21c000a
-xcopy /i/y *.dll "%localappdata%\LINQPad\Drivers\DataContext\4.6\SD.LLBLGen.Pro.LINQPadDriver56 (b094696bc21c000a)"
-xcopy /i/y *.pdb "%localappdata%\LINQPad\Drivers\DataContext\4.6\SD.LLBLGen.Pro.LINQPadDriver56 (b094696bc21c000a)"
+xcopy /i/y *.dll "%localappdata%\LINQPad\Drivers\DataContext\4.6\SD.LLBLGen.Pro.LINQPadDriver57 (b094696bc21c000a)"
+xcopy /i/y *.pdb "%localappdata%\LINQPad\Drivers\DataContext\4.6\SD.LLBLGen.Pro.LINQPadDriver57 (b094696bc21c000a)"
 pause

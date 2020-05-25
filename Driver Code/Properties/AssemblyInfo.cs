@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("LLBLGen Pro LINQPad Driver")]
-[assembly: AssemblyDescription("LINQPad driver for LLBLGen Pro v5.6")]
+[assembly: AssemblyDescription("LINQPad driver for LLBLGen Pro v5.7")]
 [assembly: AssemblyConfiguration(".NET 4.6.2")]
 [assembly: AssemblyCompany("Solutions Design bv")]
 [assembly: AssemblyProduct("LLBLGen Pro")]
-[assembly: AssemblyCopyright("Copyright ©2019 Solutions Design bv")]
+[assembly: AssemblyCopyright("Copyright ©2020 Solutions Design bv")]
 [assembly: AssemblyTrademark("LLBLGen and LLBLGen Pro are trademarks of Solutions Design bv.")]
 [assembly: AssemblyCulture("")]
 
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("5.6.0.0")]
-[assembly: AssemblyFileVersion("5.6.0")]
+[assembly: AssemblyVersion("5.7.0.0")]
+[assembly: AssemblyFileVersion("5.7.0")]
